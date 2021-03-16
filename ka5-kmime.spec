@@ -1,14 +1,14 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		qtver		5.9.0
 %define		kaname		kmime
 Summary:	KMime
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	0a0394a6e469cad6f01de0f172543cfa
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	9b81f8de8c751a1ff8149ac79f7aaf29
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= 5.9.0
@@ -74,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %ghost %{_libdir}/libKF5Mime.so.5
 %attr(755,root,root) %{_libdir}/libKF5Mime.so.*.*.*
+%{_datadir}/qlogging-categories5/kmime.categories
 
 %files devel
 %defattr(644,root,root,755)
