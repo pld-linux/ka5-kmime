@@ -1,14 +1,14 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		qtver		5.9.0
 %define		kaname		kmime
 Summary:	KMime
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9b81f8de8c751a1ff8149ac79f7aaf29
+# Source0-md5:	aa113808fd562d8d47365880c3a165df
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= 5.9.0
@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5Mime.so.5
+%ghost %{_libdir}/libKF5Mime.so.5
 %attr(755,root,root) %{_libdir}/libKF5Mime.so.*.*.*
 %{_datadir}/qlogging-categories5/kmime.categories
 
@@ -81,5 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/KMime
 %{_includedir}/KF5/kmime_version.h
 %{_libdir}/cmake/KF5Mime
-%attr(755,root,root) %{_libdir}/libKF5Mime.so
+%{_libdir}/libKF5Mime.so
 %{_libdir}/qt5/mkspecs/modules/qt_KMime.pri
