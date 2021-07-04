@@ -34,6 +34,15 @@ standard called MIME, which stands for
   term `message` is used to refer to both mail messages and newsgroup
   articles.
 
+%description -l pl.UTF-8
+KMime jest biblioteką do obsługi wiadomości pocztowych i artykułów
+grup Usenetowych. Zarówno wiadomości pocztowe i artykuły są oparte na
+tym samym standardzie zwanym MIME
+- **Multipurpose Internet Mail Extensions**, (**Uniweralne
+  roszszerzenie poczty internetowej**). W tym dokumencie, termin
+  `wiadomość` oznacza zarówno wiadomości pocztowe, jak i artykuły grup
+  news.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
