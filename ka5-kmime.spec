@@ -1,14 +1,14 @@
-%define		kdeappsver	21.12.2
+%define		kdeappsver	21.12.3
 %define		qtver		5.9.0
 %define		kaname		kmime
 Summary:	KMime
 Name:		ka5-%{kaname}
-Version:	21.12.2
+Version:	21.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9183ae1394a22ac8ccb7ac932f8b4c9f
+# Source0-md5:	5e39568c32c4314d477fd91c8cfd75ae
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= 5.9.0
