@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		qtver		5.15.2
 %define		kaname		kmime
 Summary:	KMime
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	2
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	875fa04e557bfb9752d6709cd8e18e44
+# Source0-md5:	06d915f423bacdca71126c57514614e4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= 5.9.0
@@ -38,13 +38,13 @@ standard called MIME, which stands for
   articles.
 
 %description -l pl.UTF-8
-KMime jest biblioteką do obsługi wiadomości pocztowych i artykułów
-grup Usenetowych. Zarówno wiadomości pocztowe i artykuły są oparte na
-tym samym standardzie zwanym MIME
+KMime jest biblioteką do obsługi wiadomości pocztowych i
+artykułów grup Usenetowych. Zarówno wiadomości pocztowe i
+artykuły są oparte na tym samym standardzie zwanym MIME
 - **Multipurpose Internet Mail Extensions**, (**Uniweralne
   roszszerzenie poczty internetowej**). W tym dokumencie, termin
-  `wiadomość` oznacza zarówno wiadomości pocztowe, jak i artykuły grup
-  news.
+  `wiadomość` oznacza zarówno wiadomości pocztowe, jak i artykuły
+  grup news.
 
 %package devel
 Summary:	Header files for %{kaname} development
@@ -90,13 +90,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKF5Mime.so.5
-%attr(755,root,root) %{_libdir}/libKF5Mime.so.*.*.*
 %{_datadir}/qlogging-categories5/kmime.categories
+%ghost %{_libdir}/libKPim5Mime.so.5
+%attr(755,root,root) %{_libdir}/libKPim5Mime.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/KMime
 %{_libdir}/cmake/KF5Mime
-%{_libdir}/libKF5Mime.so
 %{_libdir}/qt5/mkspecs/modules/qt_KMime.pri
+%{_includedir}/KPim5/KMime
+%{_libdir}/cmake/KPim5Mime
+%{_libdir}/libKPim5Mime.so
