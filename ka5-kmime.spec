@@ -1,28 +1,28 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		qtver		5.15.2
 %define		kaname		kmime
 Summary:	KMime
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a10eaa4c75dd3256d4a48e63ebcb18e8
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	161391c203e4ac7e4fccf04f7501cb3e
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Test-devel >= 5.9.0
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Test-devel >= 5.9.0
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf6-kcodecs-devel >= 5.51.0
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-ki18n-devel >= 5.51.0
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kcodecs-devel >= 5.51.0
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-ki18n-devel >= 5.51.0
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -38,13 +38,13 @@ standard called MIME, which stands for
   articles.
 
 %description -l pl.UTF-8
-KMime jest biblioteką do obsługi wiadomości pocztowych i artykułów
-grup Usenetowych. Zarówno wiadomości pocztowe i artykuły są oparte na
-tym samym standardzie zwanym MIME
+KMime jest biblioteką do obsługi wiadomości pocztowych i
+artykułów grup Usenetowych. Zarówno wiadomości pocztowe i
+artykuły są oparte na tym samym standardzie zwanym MIME
 - **Multipurpose Internet Mail Extensions**, (**Uniweralne
   roszszerzenie poczty internetowej**). W tym dokumencie, termin
-  `wiadomość` oznacza zarówno wiadomości pocztowe, jak i artykuły grup
-  news.
+  `wiadomość` oznacza zarówno wiadomości pocztowe, jak i artykuły
+  grup news.
 
 %package devel
 Summary:	Header files for %{kaname} development
@@ -88,12 +88,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKPim6Mime.so.*.*
-%ghost %{_libdir}/libKPim6Mime.so.6
-%{_datadir}/qlogging-categories6/kmime.categories
+%{_datadir}/qlogging-categories5/kmime.categories
+%ghost %{_libdir}/libKPim5Mime.so.5
+%attr(755,root,root) %{_libdir}/libKPim5Mime.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KPim6/KMime
-%{_libdir}/cmake/KPim6Mime
-%{_libdir}/libKPim6Mime.so
+%{_libdir}/cmake/KF5Mime
+%{_libdir}/qt5/mkspecs/modules/qt_KMime.pri
+%{_includedir}/KPim5/KMime
+%{_libdir}/cmake/KPim5Mime
+%{_libdir}/libKPim5Mime.so
